@@ -6,8 +6,6 @@
 version: "3.7"
 services:
   squid:
-    build:
-      context: ./build
     image: jgranzow/squid
     volumes:
       - /srv/squid/config:/etc/squid
@@ -17,5 +15,5 @@ services:
      - traefik.enable=false
     deploy:
       restart_policy:
-        condition: on-failure
+        condition: unless-stopped
 ```

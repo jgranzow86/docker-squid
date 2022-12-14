@@ -13,7 +13,5 @@ services:
       - "3128:3128"
     labels:
      - traefik.enable=false
-    deploy:
-      restart_policy:
-        condition: unless-stopped
+    restart: always
 ```
